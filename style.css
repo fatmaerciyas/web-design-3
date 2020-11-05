@@ -1,0 +1,527 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Libre Franklin', sans-serif;
+    position: relative; /*scrollspy için*/
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.loader img{
+    width: 200px;
+}
+
+.hidden{
+    animation: kaybol 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes kaybol{
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.nav-link::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+}
+li{
+    display: inline-block;
+}
+.nav-link:hover::after{
+    width: 100%;
+    transition: width 0.3s;
+}
+
+.bolum1{
+    width: 100%;
+    height: 100vh;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+
+#myVideo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.text{
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    /*z-index: 1;/*z-index koyarsan arkadaki particle efekti çalışmaz o yüzden koyma*/ 
+    background-color: rgba(0, 0, 0, 0.6);/*arkaplan daha karanlık olacaktır*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 75px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+#particles-js{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    
+}
+
+/*burası sayfa kaydırılınca navbarın rengi değişsin diye*/
+
+header .bolum1 nav{
+    transition: 0.5s;
+    z-index:1;
+}
+
+header .bolum1 nav.active{
+background: rgba(43, 47, 59, 0.9);
+transition: 0.5s;
+z-index: 99;
+
+}
+
+
+.birinci .navbar-brand img{
+    width: 50px;
+    height: 60px;
+}
+
+.birinci ul li{
+    margin-left: 15px;
+
+}
+
+.birinci ul li a{
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(255, 255, 255) !important;
+    transition: 0.5s;
+    line-height: 45px;/*mobilde alt alta gelmesinler*/
+}
+.birinci ul li a:hover{
+    color: white !important;
+}
+
+@media only screen and (max-width:768px){
+    .navbar{
+        
+        position: fixed;
+        top:0;
+        left: 0;
+    }
+    .navbar ul{
+        background: black;
+    }
+
+    .text h1{
+        text-align: center;
+
+    }
+}
+
+.bolum2{
+    margin-top: 150px;
+}
+
+
+.bolum2 img{
+    width: 230px;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width:768px){
+
+    .bolum2 img{
+        width: 100%;
+        height: 250px;
+        margin-bottom: 0;
+    }
+}
+
+
+.jumbotron{
+    border-radius: 10px;
+    background:rgb(107, 150, 179);
+    margin-top: -50px;
+    
+}
+
+.jumbotron:hover{
+    background:rgb(32, 36, 44);
+    transition: 0.7s;
+    color:white;
+}
+
+
+
+.jumbotron h3{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    
+}
+
+.jumbotron p{
+    font-size: 18px;
+
+}
+
+.bolum3{
+    margin-top: 60px;
+    width: 100%;
+    background:url(Görseller/arkaplan2.jpg);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.bolum3 .row {
+    width: 70%;
+}
+
+.bolum3 #carouselExampleIndicators{
+    z-index: 9;
+    margin-top: 110px;
+    margin-bottom: 40px;
+}
+
+.bolum4{
+    margin-top: 150px;
+}
+
+
+.bolum4 .card{
+    width: 100%;
+    border: 1px solid;
+    padding-bottom:20px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-bottom: 60px;
+
+}
+
+.bolum4 .card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+    transform:scale(1.05);
+}
+
+.bolum4 .card img{
+    width: 100%;
+    height: auto;
+}
+
+.bolum4 .card-body{
+    text-align: center;
+}
+
+.bolum4 h5{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.bolum4 .fiyat{
+    font-size: 22px;
+    font-weight: 600;
+    color: #910000;
+    
+}
+
+.bolum4 .metin{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.bolum4 .butonlar{
+    display: flex;
+    justify-content: space-around;
+}
+.bolum4 a{
+    border: none;
+    background-color: #1551AA;
+}
+
+.bolum4 a:hover{
+    background-color: #3080CF;
+}
+
+
+@media only screen and (max-width:768px){
+    .butonlar a{
+        flex-grow: 1;
+    }
+
+    .butonlar .ilk{
+        margin-right: 50px;
+    }
+}
+
+.bolum5{
+    padding-top: 170px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    box-sizing: border-box;
+    background: #03080a;
+
+}
+
+.bolum5 .container{
+    width:80%;
+    padding: 20px;
+
+}
+
+.bolum5 .container h5{
+    width: 100%;
+    color: #45f3ff;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.bolum5 .container .row100{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+
+.bolum5 .container span{
+    background: transparent;
+    display: inline-block;
+}
+
+.bolum5 .container .row100 .col{
+    position:relative;
+    width: 100%;
+    padding: 0 10px;
+    margin:30px 0 10px;
+    transition: 0.5s;
+}
+
+.bolum5 .container .row100 .inputBox{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: #45f3ff;
+}
+
+.bolum5 .container .row100 .inputBox input,
+.bolum5 .container .row100 .inputBox.textarea textarea{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px;
+    color: #000;
+    z-index: 1;
+}
+
+
+.bolum5 .container .row100 .inputBox .text{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+
+.bolum5 .container .row100 .inputBox input:focus + .text,
+.bolum5 .container .row100 .inputBox input:valid + .text
+{
+    /*odaklandıktan hemen sonraki text*/
+    top: -35px;
+    left: -10px;
+    /*sol çapraza kaydı*/
+}
+
+
+.bolum5 .container .row100 .inputBox .line{
+
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #45f3ff;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.bolum5 .container .row100 .inputBox input:focus ~ .line,
+.bolum5 .container .row100 .inputBox input:valid ~ .line{
+    /*inputtan sonra gelen tüm .lineların yüksekliğini ayarladık*/
+
+    height: 100%;
+}
+
+.bolum5 .container .row100 .inputBox.textarea{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+}
+
+.bolum5 .container .row100 .inputBox.textarea textarea{
+    height: 100%;
+    resize: none;
+
+}
+
+.bolum5 .container .row100 .inputBox textarea:focus + .text,
+.bolum5 .container .row100 .inputBox textarea:valid + .text{
+    top: -35px;
+    left: -10px;
+}
+
+.bolum5 .container .row100 .inputBox textarea:focus ~ .line,
+.bolum5 .container .row100 .inputBox textarea:valid ~ .line{
+    height: 100%;
+}
+
+input[type="submit"]{
+    border: none;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background: #45f3ff;
+    color: #000;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+footer{
+    margin-top: 80px;
+    padding-top: 80px;
+}
+
+footer h3{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+footer p{
+    line-height: 1.8;
+    color: rgba(255,255, 255, 0.8);
+}
+
+footer ul{
+    margin-top: 30px;  
+    padding: 0;
+}
+
+footer ul li{
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 0;
+}
+
+footer ul li a{
+    font-size: 18px;
+    color: rgba(255,255, 255, 0.7);
+}
+
+footer ul li a:hover{
+    text-decoration: none;
+    color: unset;
+}
+
+footer .son{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul.sosyalMeyda li{
+    display: block;
+    float: left;
+    margin-right: 12px;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background-color: #6a6f74;
+    text-align: center;
+    padding: 6px;
+}
+
+footer ul.sosyalMeyda li a{
+    display: block;
+    font-size: 25px;
+    color: white;
+}
+
+@media only screen and (max-width:768px){
+
+    footer ul.sosyalMeyda{
+        margin-left: 170px;
+    }
+
+    footer .col-md-4{
+        width: 100%;
+        height: 350px;
+        text-align: center;
+    }
+
+    footer .col-md-4 ul{
+        list-style: none;
+    }
+
+    footer .col-md-4 ul li{
+        text-align: center;
+    }
+}
+
+.bolum2, .bolum3, .bolum4, .bolum5, footer{
+    transition: 2s;
+}
